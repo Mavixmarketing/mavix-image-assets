@@ -1,0 +1,46 @@
+name: fetch photo
+
+# Fired by a routine with a repository_dispatch carrying a Pexels photo id.
+# The routine cannot reach any stock photo host from its sandbox; this runner
+# can, and raw.githubusercontent.com is the one image host the sandbox can read.
+on:
+  repository_dispatch:
+    types: [fetch-photo]
+  workflow_dispatch:
+    inputs:
+      photo_id: { description: Pexels photo id, required: true }
+      slug:     { description: filename slug, required: true }
+      alt:      { description: alt text, required: false, default: "" }
+      subject:  { description: subject tag, required: false, default: "" }
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-photo
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet pillow
+      - name: Fetch and normalise
+        env:
+          PHOTO_ID: ${{ github.event.client_payload.photo_id || inputs.photo_id }}
+          SLUG:     ${{ github.event.client_payload.slug     || inputs.slug }}
+          ALT:      ${{ github.event.client_payload.alt      || inputs.alt }}
+          SUBJECT:  ${{ github.event.client_payload.subject  || inputs.subject }}
+        run: |
+          STAMP="$(date -u +%FT%TZ)" python3 scripts/fetch.py | tee /tmp/rec.json
+      - name: Commit
+        run: |
+          git config user.name  "mavix-photo-bot"
+          git config user.email "bot@mavixmarketing.com"
+          git add live
+          git diff --cached --quiet && echo "nothing changed" && exit 0
+          git commit -m "photo: ${{ github.event.client_payload.slug || inputs.slug }}"
+          for i in 1 2 3; do
+            git push && break || { git pull --rebase --autostash; sleep 3; }
+          done
