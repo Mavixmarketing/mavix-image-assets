@@ -1,0 +1,17 @@
+{
+ "photos": [
+  {
+   "file": "test-dentist-lamp.jpg",
+   "pexels_id": 6627447,
+   "subject": "dentist",
+   "alt": "A dentist in scrubs adjusts a dental lamp over a patient wearing orange safety glasses",
+   "lum_top": 194,
+   "lum_mid": 176,
+   "lum_bottom": 145,
+   "bytes": 116106,
+   "added": "2026-09-07T21:38:54Z"
+  }
+ ],
+ "updated": "2026-09-07T21:38:54Z",
+ "count": 1
+}
