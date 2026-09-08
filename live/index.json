@@ -21,8 +21,36 @@
    "lum_bottom": 142,
    "bytes": 102874,
    "added": "2026-09-07T22:09:23Z"
+  },
+  {
+   "file": "2026-09-08-campbells-dividend.jpg",
+   "pexels_id": 36940488,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "grocery shopper",
+   "alt": "Young woman shopping in a well-stocked grocery aisle, pushing a cart and browsing products.",
+   "lum_top": 60,
+   "lum_mid": 102,
+   "lum_bottom": 115,
+   "bytes": 320434,
+   "added": "2026-09-08T12:05:26Z"
+  },
+  {
+   "file": "2026-09-08-campbells-dividend-story.jpg",
+   "pexels_id": 36940488,
+   "size": "story",
+   "w": 1080,
+   "h": 1920,
+   "subject": "grocery shopper",
+   "alt": "Young woman shopping in a well-stocked grocery aisle, pushing a cart and browsing products.",
+   "lum_top": 55,
+   "lum_mid": 107,
+   "lum_bottom": 110,
+   "bytes": 400053,
+   "added": "2026-09-08T12:05:26Z"
   }
  ],
- "updated": "2026-09-07T22:09:23Z",
- "count": 2
+ "updated": "2026-09-08T12:05:26Z",
+ "count": 4
 }
