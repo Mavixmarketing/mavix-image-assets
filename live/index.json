@@ -77,8 +77,36 @@
    "lum_bottom": 153,
    "bytes": 226703,
    "added": "2026-09-08T12:06:51Z"
+  },
+  {
+   "file": "2026-09-08-jlr-supply-chain.jpg",
+   "pexels_id": 5846271,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "factory workshop",
+   "alt": "Caucasian male factory worker using a lathe machine in an industrial setting.",
+   "lum_top": 107,
+   "lum_mid": 75,
+   "lum_bottom": 48,
+   "bytes": 134233,
+   "added": "2026-09-08T12:15:50Z"
+  },
+  {
+   "file": "2026-09-08-jlr-supply-chain-story.jpg",
+   "pexels_id": 5846271,
+   "size": "story",
+   "w": 1080,
+   "h": 1920,
+   "subject": "factory workshop",
+   "alt": "Caucasian male factory worker using a lathe machine in an industrial setting.",
+   "lum_top": 102,
+   "lum_mid": 74,
+   "lum_bottom": 45,
+   "bytes": 188308,
+   "added": "2026-09-08T12:15:50Z"
   }
  ],
- "updated": "2026-09-08T12:06:51Z",
- "count": 6
+ "updated": "2026-09-08T12:15:50Z",
+ "count": 8
 }
