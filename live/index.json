@@ -133,8 +133,36 @@
    "lum_bottom": 145,
    "bytes": 253313,
    "added": "2026-09-08T21:12:48Z"
+  },
+  {
+   "file": "2026-09-09-personalised-pricing.jpg",
+   "pexels_id": 8938672,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "online shopper with card",
+   "alt": "Young woman using smartphone and card for online shopping, sitting at wooden table with laptop.",
+   "lum_top": 90,
+   "lum_mid": 140,
+   "lum_bottom": 188,
+   "bytes": 176363,
+   "added": "2026-09-09T17:13:41Z"
+  },
+  {
+   "file": "2026-09-09-personalised-pricing-story.jpg",
+   "pexels_id": 8938672,
+   "size": "story",
+   "w": 1080,
+   "h": 1920,
+   "subject": "online shopper with card",
+   "alt": "Young woman using smartphone and card for online shopping, sitting at wooden table with laptop.",
+   "lum_top": 81,
+   "lum_mid": 136,
+   "lum_bottom": 197,
+   "bytes": 233203,
+   "added": "2026-09-09T17:13:41Z"
   }
  ],
- "updated": "2026-09-08T21:12:48Z",
- "count": 10
+ "updated": "2026-09-09T17:13:41Z",
+ "count": 12
 }
