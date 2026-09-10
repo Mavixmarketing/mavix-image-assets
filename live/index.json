@@ -217,8 +217,64 @@
    "lum_bottom": 85,
    "bytes": 115856,
    "added": "2026-09-10T00:18:36Z"
+  },
+  {
+   "file": "2026-09-10-seo-cost-agency-team-square.jpg",
+   "pexels_id": 6248966,
+   "size": "square",
+   "w": 1080,
+   "h": 1080,
+   "subject": "agency team",
+   "alt": "Diverse team engaged in collaborative discussion around computer in modern office.",
+   "lum_top": 156,
+   "lum_mid": 128,
+   "lum_bottom": 158,
+   "bytes": 126510,
+   "added": "2026-09-10T00:23:43Z"
+  },
+  {
+   "file": "2026-09-10-seo-cost-agency-team.jpg",
+   "pexels_id": 6248966,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "agency team",
+   "alt": "Diverse team engaged in collaborative discussion around computer in modern office.",
+   "lum_top": 162,
+   "lum_mid": 135,
+   "lum_bottom": 158,
+   "bytes": 139135,
+   "added": "2026-09-10T00:23:43Z"
+  },
+  {
+   "file": "2026-09-10-seo-cost-freelancer-square.jpg",
+   "pexels_id": 4240571,
+   "size": "square",
+   "w": 1080,
+   "h": 1080,
+   "subject": "freelancer at home",
+   "alt": "A young woman working from home, writing notes at a desk with a laptop and papers.",
+   "lum_top": 207,
+   "lum_mid": 182,
+   "lum_bottom": 172,
+   "bytes": 142954,
+   "added": "2026-09-10T00:23:43Z"
+  },
+  {
+   "file": "2026-09-10-seo-cost-freelancer.jpg",
+   "pexels_id": 4240571,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "freelancer at home",
+   "alt": "A young woman working from home, writing notes at a desk with a laptop and papers.",
+   "lum_top": 201,
+   "lum_mid": 176,
+   "lum_bottom": 174,
+   "bytes": 190949,
+   "added": "2026-09-10T00:23:43Z"
   }
  ],
- "updated": "2026-09-10T00:18:36Z",
- "count": 16
+ "updated": "2026-09-10T00:23:43Z",
+ "count": 20
 }
