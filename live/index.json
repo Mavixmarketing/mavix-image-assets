@@ -189,8 +189,36 @@
    "lum_bottom": 127,
    "bytes": 303852,
    "added": "2026-09-09T21:17:51Z"
+  },
+  {
+   "file": "2026-09-10-seo-cost-interview-square.jpg",
+   "pexels_id": 5439368,
+   "size": "square",
+   "w": 1080,
+   "h": 1080,
+   "subject": "job interview",
+   "alt": "Two men in a job interview setting in a modern office with large windows.",
+   "lum_top": 188,
+   "lum_mid": 109,
+   "lum_bottom": 86,
+   "bytes": 92046,
+   "added": "2026-09-10T00:18:36Z"
+  },
+  {
+   "file": "2026-09-10-seo-cost-interview.jpg",
+   "pexels_id": 5439368,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "job interview",
+   "alt": "Two men in a job interview setting in a modern office with large windows.",
+   "lum_top": 182,
+   "lum_mid": 108,
+   "lum_bottom": 85,
+   "bytes": 115856,
+   "added": "2026-09-10T00:18:36Z"
   }
  ],
- "updated": "2026-09-09T21:17:51Z",
- "count": 14
+ "updated": "2026-09-10T00:18:36Z",
+ "count": 16
 }
