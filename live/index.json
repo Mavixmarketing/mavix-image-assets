@@ -273,8 +273,36 @@
    "lum_bottom": 174,
    "bytes": 190949,
    "added": "2026-09-10T00:23:43Z"
+  },
+  {
+   "file": "2026-09-10-small-business-uncertainty.jpg",
+   "pexels_id": 12326636,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "small business counter",
+   "alt": "Man managing transactions in a vibrant small grocery store, capturing the essence of local retail.",
+   "lum_top": 48,
+   "lum_mid": 146,
+   "lum_bottom": 119,
+   "bytes": 215781,
+   "added": "2026-09-10T14:11:33Z"
+  },
+  {
+   "file": "2026-09-10-small-business-uncertainty-story.jpg",
+   "pexels_id": 12326636,
+   "size": "story",
+   "w": 1080,
+   "h": 1920,
+   "subject": "small business counter",
+   "alt": "Man managing transactions in a vibrant small grocery store, capturing the essence of local retail.",
+   "lum_top": 48,
+   "lum_mid": 153,
+   "lum_bottom": 109,
+   "bytes": 273197,
+   "added": "2026-09-10T14:11:33Z"
   }
  ],
- "updated": "2026-09-10T00:23:43Z",
- "count": 20
+ "updated": "2026-09-10T14:11:33Z",
+ "count": 22
 }
