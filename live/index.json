@@ -301,8 +301,36 @@
    "lum_bottom": 109,
    "bytes": 273197,
    "added": "2026-09-10T14:11:33Z"
+  },
+  {
+   "file": "2026-09-10-ai-shopping-64.jpg",
+   "pexels_id": 6969926,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "online shopping at home",
+   "alt": "Woman holding credit card and using laptop for online shopping at home.",
+   "lum_top": 90,
+   "lum_mid": 99,
+   "lum_bottom": 146,
+   "bytes": 116052,
+   "added": "2026-09-10T17:06:18Z"
+  },
+  {
+   "file": "2026-09-10-ai-shopping-64-story.jpg",
+   "pexels_id": 6969926,
+   "size": "story",
+   "w": 1080,
+   "h": 1920,
+   "subject": "online shopping at home",
+   "alt": "Woman holding credit card and using laptop for online shopping at home.",
+   "lum_top": 100,
+   "lum_mid": 101,
+   "lum_bottom": 141,
+   "bytes": 154846,
+   "added": "2026-09-10T17:06:18Z"
   }
  ],
- "updated": "2026-09-10T14:11:33Z",
- "count": 22
+ "updated": "2026-09-10T17:06:18Z",
+ "count": 24
 }
