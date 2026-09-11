@@ -357,8 +357,36 @@
    "lum_bottom": 58,
    "bytes": 253070,
    "added": "2026-09-10T21:18:50Z"
+  },
+  {
+   "file": "2026-09-11-email-roi-calculator.jpg",
+   "pexels_id": 9052479,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "calculation",
+   "alt": "Top view of a hand calculating numbers with a large calculator and notes on a desk.",
+   "lum_top": 133,
+   "lum_mid": 146,
+   "lum_bottom": 158,
+   "bytes": 258745,
+   "added": "2026-09-11T00:20:13Z"
+  },
+  {
+   "file": "2026-09-11-email-roi-calculator-square.jpg",
+   "pexels_id": 9052479,
+   "size": "square",
+   "w": 1080,
+   "h": 1080,
+   "subject": "calculation",
+   "alt": "Top view of a hand calculating numbers with a large calculator and notes on a desk.",
+   "lum_top": 135,
+   "lum_mid": 147,
+   "lum_bottom": 159,
+   "bytes": 221617,
+   "added": "2026-09-11T00:20:13Z"
   }
  ],
- "updated": "2026-09-10T21:18:50Z",
- "count": 26
+ "updated": "2026-09-11T00:20:13Z",
+ "count": 28
 }
