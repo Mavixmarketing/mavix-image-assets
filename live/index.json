@@ -469,8 +469,36 @@
    "lum_bottom": 145,
    "bytes": 85059,
    "added": "2026-09-11T14:21:01Z"
+  },
+  {
+   "file": "2026-09-11-everest-feather.jpg",
+   "pexels_id": 28529455,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "window fitter",
+   "alt": "A young worker in Nanaimo, BC, smiling while holding a drill, seen through a window.",
+   "lum_top": 85,
+   "lum_mid": 111,
+   "lum_bottom": 113,
+   "bytes": 169787,
+   "added": "2026-09-11T17:10:40Z"
+  },
+  {
+   "file": "2026-09-11-everest-feather-story.jpg",
+   "pexels_id": 28529455,
+   "size": "story",
+   "w": 1080,
+   "h": 1920,
+   "subject": "window fitter",
+   "alt": "A young worker in Nanaimo, BC, smiling while holding a drill, seen through a window.",
+   "lum_top": 71,
+   "lum_mid": 107,
+   "lum_bottom": 129,
+   "bytes": 213441,
+   "added": "2026-09-11T17:10:40Z"
   }
  ],
- "updated": "2026-09-11T14:21:01Z",
- "count": 34
+ "updated": "2026-09-11T17:10:40Z",
+ "count": 36
 }
