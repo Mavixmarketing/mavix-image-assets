@@ -497,8 +497,36 @@
    "lum_bottom": 129,
    "bytes": 213441,
    "added": "2026-09-11T17:10:40Z"
+  },
+  {
+   "file": "2026-09-12-ad-forecast.jpg",
+   "pexels_id": 4353610,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "small business owner at a laptop on their own counter",
+   "alt": "Side view of serious bartender in apron and eyeglasses using modern netbook while sitting at bar counter in modern restaurant",
+   "lum_top": 78,
+   "lum_mid": 70,
+   "lum_bottom": 91,
+   "bytes": 165017,
+   "added": "2026-09-12T17:08:59Z"
+  },
+  {
+   "file": "2026-09-12-ad-forecast-story.jpg",
+   "pexels_id": 4353610,
+   "size": "story",
+   "w": 1080,
+   "h": 1920,
+   "subject": "small business owner at a laptop on their own counter",
+   "alt": "Side view of serious bartender in apron and eyeglasses using modern netbook while sitting at bar counter in modern restaurant",
+   "lum_top": 71,
+   "lum_mid": 75,
+   "lum_bottom": 85,
+   "bytes": 213346,
+   "added": "2026-09-12T17:08:59Z"
   }
  ],
- "updated": "2026-09-11T17:10:40Z",
- "count": 36
+ "updated": "2026-09-12T17:08:59Z",
+ "count": 38
 }
