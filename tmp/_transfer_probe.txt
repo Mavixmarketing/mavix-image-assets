@@ -1,1 +1,1 @@
-workbench commit path works
+Scratch file from the blog routine's 2026-09-13 binary-transfer check. Safe to delete by hand; the routine cannot delete files itself.
