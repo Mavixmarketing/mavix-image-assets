@@ -735,8 +735,22 @@
    "lum_bottom": 192,
    "bytes": 87413,
    "added": "2026-09-14T00:29:38Z"
+  },
+  {
+   "file": "2026-09-14-rundown-publishers.jpg",
+   "pexels_id": 7596918,
+   "size": "feed",
+   "w": 1080,
+   "h": 1350,
+   "subject": "publisher desk",
+   "alt": "An overhead view of a person editing newspapers and documents at a desk.",
+   "lum_top": 115,
+   "lum_mid": 147,
+   "lum_bottom": 126,
+   "bytes": 127248,
+   "added": "2026-09-14T20:09:46Z"
   }
  ],
- "updated": "2026-09-14T00:29:38Z",
- "count": 53
+ "updated": "2026-09-14T20:09:46Z",
+ "count": 54
 }
