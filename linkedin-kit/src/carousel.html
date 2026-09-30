@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+.cnt{font-size:22px;font-weight:600;letter-spacing:2px;color:var(--mute)}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+#h{height:600px;display:flex;align-items:center;margin-top:28px}
+#s{font-size:36px;line-height:1.45;color:var(--mute);margin-top:32px;max-height:160px;overflow:hidden;text-wrap:balance}
+.swipe{display:flex;align-items:center;gap:14px;background:var(--a);color:var(--on-a);border-radius:40px;
+  padding:16px 30px;font-size:26px;font-weight:700}
+.swipe svg{width:34px;height:20px}
+.num{font-size:150px;font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:3px var(--a);letter-spacing:-4px}
+#t{max-height:340px;margin-top:40px;overflow:hidden}
+#t h2{font-size:1em;font-weight:800;line-height:1.18;letter-spacing:-.02em;text-wrap:balance;width:100%}
+#b{font-size:40px;line-height:1.5;color:var(--mute);margin-top:34px;max-height:360px;overflow:hidden;text-wrap:pretty}
+.stat{display:flex;align-items:baseline;gap:22px;margin-top:10px}
+.stat .v{font-size:132px;font-weight:800;color:var(--a);letter-spacing:-3px;line-height:1}
+.stat .l{font-size:26px;color:var(--mute);line-height:1.35;max-width:520px}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;flex:1;max-width:420px}
+.bar i{display:block;height:100%;background:var(--a)}
+.small{display:flex;align-items:center;gap:14px;font-size:22px;color:var(--mute)}
+.small img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.panel{background:var(--a);color:var(--on-a)}
+.panel .wm .mvx-n,.panel .wm .mvx-s,.panel .author .n,.panel .author .r,.panel h1.big{color:var(--on-a)}
+.panel .oh__ghost{-webkit-text-stroke:2px var(--on-a);opacity:.45}
+.dark .panel .hl{background:#101010;color:#B4FF24}
+.panel .tex{--tex:rgba(255,255,255,.07)}
+.panel .author img{border-color:var(--on-a)}
+.panel .chip.neutral{background:rgba(255,255,255,.18);color:var(--on-a)}
+</style></head><body>
+<script>/*DATA*/</script><script src="base.js"></script>
+<div class="frame" id="f"><div class="tex"></div></div>
+<script>
+const n = D.n, i = D.i, f = $("#f");
+const count = `<span class="cnt">${String(i + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}</span>`;
+const small = `<div class="small"><img src="${A.img}">${A.name}</div>`;
+const arrow = `<svg viewBox="0 0 34 20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10h29M22 2l9 8-9 8"/></svg>`;
+if (i === 0) {
+  need(["kicker", "headline", "sub"]);
+  f.insertAdjacentHTML("beforeend", `<div class="top"><div>${lockup()}</div>${count}</div>
+   <div class="mid"><div><span class="chip acc">${esc(D.kicker)}</span></div>
+   <div class="fitbox" id="h" data-child><h1 class="big">${outline(D.headline)}</h1></div>
+   <div id="s">${rich(D.sub)}</div></div>
+   <div class="foot">${author()}<div class="swipe">Swipe ${arrow}</div></div>`);
+} else if (i === n - 1) {
+  need(["question"]);
+  f.classList.add("panel");
+  f.insertAdjacentHTML("beforeend", `<div class="top"><div>${lockup().replace(`fill="${ACC}"`, 'fill="currentColor"')}</div>${count.replace('class="cnt"', 'class="cnt" style="color:inherit;opacity:.7"')}</div>
+   <div class="mid"><div><span class="chip neutral">Your turn</span></div>
+   <div class="fitbox" id="h" data-child><h1 class="big">${outline(D.question)}</h1></div></div>
+   <div class="foot">${author()}</div>`);
+} else {
+  const sl = (D.slides || [])[i - 1] || {};
+  if (!sl.title || !sl.body) window.__overflow.push("each slide needs title and body");
+  const stat = sl.stat ? `<div class="stat"><div class="v">${esc(sl.stat)}</div><div class="l">${rich(sl.stat_label || "")}</div></div>` : "";
+  f.insertAdjacentHTML("beforeend", `<div class="top"><div>${lockup()}</div>${count}</div>
+   <div class="mid"><div class="num">${String(i).padStart(2, "0")}</div>
+   <div class="fitbox" id="t"><h2>${rich(sl.title)}</h2></div>
+   ${stat}<div id="b">${rich(sl.body)}</div></div>
+   <div class="foot">${small}<div class="bar"><i style="width:${Math.round((i + 1) / n * 100)}%"></i></div></div>`);
+  if (sl.stat) $("#b").style.maxHeight = "220px";
+}
+document.fonts.ready.then(() => {
+  if ($("#h")) fit($("#h"), i === 0 ? 132 : 110, 64, i === 0 ? "cover headline" : "question");
+  if ($("#t")) fit($("#t"), 92, 52, "slide title");
+  if ($("#b")) fit($("#b"), 40, 28, "slide body");
+  if ($("#s")) fit($("#s"), 36, 28, "cover sub");
+  window.__done = true;
+});
+</script></body></html>

@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=1080, height=1350">
+<script src="gsap.min.js"></script><link rel="stylesheet" href="base.css">
+<style>
+#root{width:1080px;height:1350px;position:relative;overflow:hidden}
+.mid{position:absolute!important;left:74px;right:74px;top:160px;bottom:180px;display:flex;flex-direction:column;justify-content:center}
+.foot{position:absolute!important;left:74px;right:74px;bottom:74px}
+#h{max-height:260px;overflow:hidden}
+#h h1{font-size:1em}
+#rows{margin-top:44px;display:flex;flex-direction:column;gap:26px}
+.row .lb{display:flex;justify-content:space-between;align-items:baseline;font-size:28px;font-weight:600;color:var(--fg);margin-bottom:10px;gap:20px}
+.row .lb .t{white-space:nowrap;overflow:hidden;text-overflow:clip}
+.row .lb .v{font-weight:800;font-size:32px;color:var(--mute);white-space:nowrap}
+.row.hi .lb .v{color:var(--a)}
+.track{height:34px;border-radius:10px;background:var(--line);overflow:hidden}
+.fill{height:100%;border-radius:10px;background:var(--grey);transform-origin:left}
+.row.hi .fill{background:var(--a)}
+#pun{margin-top:44px;font-size:42px;font-weight:800;line-height:1.3;letter-spacing:-.02em;max-height:120px;overflow:hidden}
+#pun span{background:var(--lime);color:#101010;padding:2px 14px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.srcrow{margin-top:22px}
+</style></head><body>
+<script>/*DATA*/</script><script src="base.js"></script>
+<div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1080" data-height="1350">
+ <div class="clip" id="scene" data-start="0" data-duration="10" data-track-index="0" style="width:1080px;height:1350px"><div class="frame"><div class="tex"></div>
+  <div class="top"><div id="lk"></div><span class="chip acc" id="k"></span></div>
+  <div class="mid">
+    <div id="h" data-child><h1 class="big" id="hh"></h1></div>
+    <div id="rows"></div>
+    <div id="pun"><span id="punt"></span></div>
+    <div class="srcrow src" id="src"></div>
+  </div>
+  <div class="foot"><div id="au"></div><span class="chip neutral" id="p"></span></div>
+ </div></div>
+</div>
+<script>
+need(["kicker", "headline", "bars", "punch", "prompt"]);
+const B = (D.bars || []);
+if (B.length < 3 || B.length > 6) window.__overflow.push("bars needs 3 to 6 rows");
+$("#lk").innerHTML = lockup(); $("#au").innerHTML = author();
+$("#k").textContent = D.kicker; $("#p").textContent = D.prompt; $("#hh").innerHTML = outline(D.headline);
+$("#punt").textContent = D.punch; $("#src").textContent = D.source ? "Source: " + D.source : "";
+const max = Math.max(...B.map(b => Number(b.value) || 0), 1);
+const hi = D.highlight ?? B.reduce((m, b, i) => (Number(b.value) > Number(B[m].value) ? i : m), 0);
+$("#rows").innerHTML = B.map((b, i) => `<div class="row${i === hi ? " hi" : ""}"><div class="lb"><span class="t">${esc(b.label)}</span><span class="v" id="v${i}">${esc(b.display ?? b.value)}</span></div>
+  <div class="track"><div class="fill" id="f${i}" style="width:${Math.max(3, (Number(b.value) || 0) / max * 100)}%"></div></div></div>`).join("");
+const tl = gsap.timeline({paused: true});
+tl.fromTo(".top", {opacity: 0}, {opacity: 1, duration: .4}, 0)
+  .fromTo("#h", {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: .7, ease: "power3.out"}, .2)
+  .fromTo(".row", {opacity: 0, y: 16}, {opacity: 1, y: 0, duration: .35, stagger: .18}, 1.0);
+B.forEach((b, i) => tl.fromTo(`#f${i}`, {scaleX: 0}, {scaleX: 1, duration: 1.1, ease: "power3.out"}, 1.2 + i * .22));
+tl.fromTo("#pun", {opacity: 0, x: -30}, {opacity: 1, x: 0, duration: .6, ease: "power3.out"}, 1.4 + B.length * .22 + 1)
+  .fromTo(["#src", ".foot"], {opacity: 0}, {opacity: 1, duration: .5}, 2.2 + B.length * .22 + 1)
+  .to({}, {duration: 1}, 9);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+tl.seek(0);
+document.fonts.ready.then(() => {
+  fit($("#h"), 80, 50, "headline"); fit($("#pun"), 42, 30, "punch");
+  document.querySelectorAll(".row .t").forEach((t, i) => { if (t.scrollWidth > t.clientWidth + 2) window.__overflow.push(`bar label ${i + 1} too long`); });
+  tl.seek(0); window.__done = true;
+});
+</script></body></html>

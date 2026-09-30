@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+#h{height:300px;margin-top:48px;display:flex;align-items:flex-end}
+.grid{flex:1;display:grid;grid-template-columns:1fr 2px 1fr;column-gap:36px;margin-top:44px;min-height:0;
+  grid-template-rows:auto repeat(3,1fr);row-gap:0}
+.rule{background:var(--line);grid-column:2;grid-row:1 / span 4}
+.hd{padding-bottom:26px}
+.cell{display:flex;gap:16px;align-items:flex-start;padding:26px 0;border-top:1px solid var(--line);overflow:hidden;font-size:30px}
+.ic{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:22px;margin-top:4px}
+.m .ic{background:var(--line);color:var(--mute)}
+.r .ic{background:var(--a);color:var(--on-a)}
+.m .tx{font-size:1em;line-height:1.35;color:var(--mute);text-decoration:line-through;text-decoration-thickness:2px;
+  text-decoration-color:var(--grey)}
+.r .tx{font-size:1em;line-height:1.35;font-weight:600;color:var(--fg)}
+.foot{margin-top:36px}
+</style></head><body>
+<script>/*DATA*/</script><script src="base.js"></script>
+<div class="frame"><div class="tex"></div>
+  <div class="top"><div id="lk"></div><span class="chip acc" id="k"></span></div>
+  <div class="fitbox" id="h" data-child><h1 class="big" id="hh"></h1></div>
+  <div class="grid" id="g"></div>
+  <div class="foot"><div id="au"></div><span class="chip neutral" id="p"></span></div>
+</div>
+<script>
+need(["kicker", "headline", "myths", "truths", "prompt"]);
+if ((D.myths || []).length !== 3 || (D.truths || []).length !== 3) window.__overflow.push("myth needs exactly 3 myths and 3 truths");
+$("#lk").innerHTML = lockup(); $("#au").innerHTML = author();
+$("#k").textContent = D.kicker; $("#p").textContent = D.prompt; $("#hh").innerHTML = outline(D.headline);
+let g = `<div class="hd"><span class="chip neutral">What people think</span></div><div class="rule"></div><div class="hd"><span class="chip acc">What's true</span></div>`;
+for (let i = 0; i < 3; i++) g += `<div class="cell m"><div class="ic">✕</div><div class="tx">${rich((D.myths || [])[i])}</div></div>
+  <div class="cell r" style="grid-column:3"><div class="ic">✓</div><div class="tx">${rich((D.truths || [])[i])}</div></div>`;
+$("#g").innerHTML = g;
+document.fonts.ready.then(() => {
+  fit($("#h"), 96, 60, "headline");
+  document.querySelectorAll(".cell .tx").forEach((t, i) => { t.parentElement.style.height = t.parentElement.clientHeight + "px"; });
+  document.querySelectorAll(".cell").forEach((c, i) => fit(c, 30, 22, (c.classList.contains("m") ? "myth " : "truth ") + (Math.floor(i / 2) + 1)));
+  window.__done = true;
+});
+</script></body></html>

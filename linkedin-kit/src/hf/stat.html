@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=1080, height=1350">
+<script src="gsap.min.js"></script><link rel="stylesheet" href="base.css">
+<style>
+#root{width:1080px;height:1350px;position:relative;overflow:hidden}
+.frame{height:1350px}
+.mid{position:absolute!important;left:74px;right:74px;top:160px;bottom:180px;display:flex;flex-direction:column;justify-content:center}
+.foot{position:absolute!important;left:74px;right:74px;bottom:74px}
+#h{max-height:300px;overflow:hidden;margin-top:26px}
+#h h1{font-size:1em}
+.numrow{margin-top:40px;display:flex;align-items:flex-end;gap:10px}
+#num{max-width:932px;overflow:hidden;font-size:300px;font-weight:800;line-height:.9;letter-spacing:-.04em;color:var(--a);white-space:nowrap}
+#lab{font-size:34px;line-height:1.4;color:var(--mute);margin-top:22px;max-height:100px;overflow:hidden;text-wrap:balance}
+.div{height:4px;width:100%;background:var(--line);margin:40px 0 34px;transform-origin:left}
+#ctx{font-size:36px;line-height:1.45;color:var(--fg);max-height:160px;overflow:hidden;text-wrap:pretty}
+#pun{margin-top:28px;font-size:44px;font-weight:800;line-height:1.3;letter-spacing:-.02em;max-height:130px;overflow:hidden}
+#pun span{background:var(--lime);color:#101010;padding:2px 14px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.srcrow{margin-top:26px}
+</style></head><body>
+<script>/*DATA*/</script><script src="base.js"></script>
+<div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1080" data-height="1350">
+ <div class="clip" id="scene" data-start="0" data-duration="10" data-track-index="0" style="width:1080px;height:1350px"><div class="frame"><div class="tex"></div>
+  <div class="top"><div id="lk"></div><span class="chip acc" id="k"></span></div>
+  <div class="mid">
+    <div id="h" data-child><h1 class="big" id="hh"></h1></div>
+    <div class="numrow"><div id="num" data-wonly></div></div>
+    <div id="lab"></div>
+    <div class="div" id="dv"></div>
+    <div id="ctx"></div>
+    <div id="pun"><span id="punt"></span></div>
+    <div class="srcrow src" id="src"></div>
+  </div>
+  <div class="foot"><div id="au"></div><span class="chip neutral" id="p"></span></div>
+ </div></div>
+</div>
+<script>
+need(["kicker", "headline", "number", "label", "context", "punch", "prompt"]);
+$("#lk").innerHTML = lockup(); $("#au").innerHTML = author();
+$("#k").textContent = D.kicker; $("#p").textContent = D.prompt; $("#hh").innerHTML = outline(D.headline);
+$("#lab").innerHTML = rich(D.label); $("#ctx").innerHTML = rich(D.context); $("#punt").textContent = D.punch;
+$("#src").textContent = D.source ? "Source: " + D.source : "";
+const m = String(D.number).match(/^([^\d]*)([\d,]*\.?\d+)(.*)$/);
+const pre = m ? m[1] : "", val = m ? parseFloat(m[2].replace(/,/g, "")) : null, suf = m ? m[3] : "";
+const dec = m && m[2].includes(".") ? m[2].split(".")[1].length : 0;
+const comma = m && m[2].includes(",");
+const show = v => { let s = v.toFixed(dec); if (comma) s = Number(s).toLocaleString("en-US", {minimumFractionDigits: dec}); return pre + s + suf; };
+$("#num").textContent = String(D.number);
+const tl = gsap.timeline({paused: true});
+tl.fromTo(".top", {opacity: 0}, {opacity: 1, duration: .4}, 0)
+  .fromTo("#h", {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: .7, ease: "power3.out"}, .2)
+  .fromTo("#num", {opacity: 0, scale: .85, transformOrigin: "left bottom"}, {opacity: 1, scale: 1, duration: .5, ease: "back.out(1.6)"}, 1.1);
+if (val !== null) { const o = {v: 0}; tl.to(o, {v: val, duration: 1.8, ease: "power2.out", onUpdate: () => { $("#num").textContent = show(o.v); }}, 1.1); }
+tl.fromTo("#lab", {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: .5}, 2.9)
+  .fromTo("#dv", {scaleX: 0}, {scaleX: 1, duration: .6, ease: "power2.inOut"}, 3.6)
+  .fromTo("#ctx", {opacity: 0, y: 24}, {opacity: 1, y: 0, duration: .6}, 4.1)
+  .fromTo("#pun", {opacity: 0, x: -30}, {opacity: 1, x: 0, duration: .6, ease: "power3.out"}, 5.6)
+  .fromTo(["#src", ".foot"], {opacity: 0}, {opacity: 1, duration: .5}, 6.4)
+  .to({}, {duration: 3.1}, 6.9);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+tl.seek(0);
+document.fonts.ready.then(() => {
+  $("#num").textContent = String(D.number);
+  fit($("#h"), 84, 52, "headline"); fit($("#num"), 300, 140, "number");
+  fit($("#lab"), 34, 26, "label"); fit($("#ctx"), 36, 28, "context"); fit($("#pun"), 44, 32, "punch");
+  tl.seek(0); window.__done = true;
+});
+</script></body></html>

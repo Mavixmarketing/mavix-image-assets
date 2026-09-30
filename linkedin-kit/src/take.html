@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px;min-height:0}
+#h{height:640px;display:flex;align-items:center}
+#h h1{width:100%}
+#s{font-size:36px;line-height:1.45;color:var(--mute);max-height:170px;overflow:hidden}
+.rule{height:6px;width:120px;background:var(--a);border-radius:3px}
+</style></head><body>
+<script>/*DATA*/</script><script src="base.js"></script>
+<div class="frame"><div class="tex"></div>
+  <div class="top"><div id="lk"></div><span class="chip acc" id="k"></span></div>
+  <div class="mid">
+    <div class="fitbox" id="h" data-child><h1 class="big" id="hh"></h1></div>
+    <div class="rule"></div>
+    <div id="s"></div>
+  </div>
+  <div class="foot"><div id="au"></div><span class="chip neutral" id="p"></span></div>
+</div>
+<script>
+need(["kicker", "headline", "sub", "prompt"]);
+$("#lk").innerHTML = lockup(); $("#au").innerHTML = author();
+$("#k").textContent = D.kicker; $("#p").textContent = D.prompt;
+$("#hh").innerHTML = outline(D.headline); $("#s").innerHTML = rich(D.sub);
+document.fonts.ready.then(() => { fit($("#h"), 132, 72, "headline"); fit($("#s"), 36, 28, "sub"); window.__done = true; });
+</script></body></html>
